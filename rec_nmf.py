@@ -5,6 +5,9 @@ import numpy as np
 import math
 import random
 
+'''
+how to realize?
+'''
 
 users = 943 # 1-943
 items = 1682 # 1-1682
