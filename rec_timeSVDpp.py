@@ -6,7 +6,7 @@ import math
 import random
 
 '''
-nearly done
+参考桌面的timeSVDpp实现方式
 '''
 
 users = 943 # 1-943
