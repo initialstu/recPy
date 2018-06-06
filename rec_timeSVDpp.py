@@ -31,3 +31,12 @@ def load_data():
 
     return train, test
 
+def init_parameters():
+    pass
+
+def timesvdpp():
+    pass
+
+
+if __name__ == "__main__":
+    timesvdpp()

@@ -38,8 +38,16 @@ def get_rec_result(userid, K, train, weights):
     得到用户user的推荐rank
     '''
     # 参考推荐系统实践的itemCF实现部分55-56页
-    
-    pass
+    rank = {}
+    Nu = train[userid]
+    for j in Nu:
+    	for i, wi in sorted(enumerate(weights[j-1]), key = lambda x:x[1], reverse = True)[:K]:
+    		if i not in Nu:
+    			if i in rank:
+    				rank[i] += wi * Nu[j]
+    			else:
+    				rank[i] = wi * Nu[j]
+    return rank
 
 
 def itemcf(itemid):
@@ -49,7 +57,7 @@ def itemcf(itemid):
     # Ni = np.zeros((1, items))
     for u in train:
         for i1 in train[u]:
-                Ni[i1-1] += 1
+            Ni[i1-1] += 1
             for i2 in train[u]:
                 if i1 != i2:
                     weights[i1-1, i2-1] += 1
